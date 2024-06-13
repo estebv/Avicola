@@ -1,0 +1,61 @@
+/* src/styles/formStyles.scss */
+
+// Variables
+$border-color: #ccc;
+$border-radius: 10px;
+$background-color: #f9f9f9;
+$input-padding: 8px;
+$button-bg-color: #007BFF;
+$button-hover-bg-color: #0056b3;
+$error-color: red;
+
+h1{
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $background-color;
+
+  div {
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: $input-padding;
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+  }
+
+  button {
+    padding: 10px 15px;
+    background-color: $button-bg-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $button-hover-bg-color;
+    }
+  }
+
+  span {
+    color: $error-color;
+    font-size: 0.9em;
+  }
+}
