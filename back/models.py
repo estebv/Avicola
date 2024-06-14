@@ -43,8 +43,6 @@ class Mortalidad(db.Model):
     __tablename__ = 'mortalidad'
 
     mortalidad_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    numero_galpon = db.Column(db.Integer)
-    estado_salud = db.Column(db.String(255), nullable=False)
     fecha_muerte = db.Column(db.Date)
     causa_muerte = db.Column(db.String(255))
     numero_aves = db.Column(db.Integer)

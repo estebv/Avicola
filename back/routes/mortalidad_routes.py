@@ -20,7 +20,6 @@ def add_mortalidad():
     data = request.get_json()
     nueva_mortalidad = Mortalidad(
         numero_galpon=data['numero_galpon'],
-        estado_salud=data['estado_salud'],
         fecha_muerte=data['fecha_muerte'],
         causa_muerte=data['causa_muerte'],
         numero_aves=data['numero_aves'],

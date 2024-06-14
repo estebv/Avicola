@@ -7,9 +7,8 @@ const aveConfig = [
   { name: 'fecha_nacimiento', label: 'Fecha de Nacimiento', type: 'date', required: true },
   { name: 'fecha_llegada', label: 'Fecha de Llegada', type: 'date', required: true },
   { name: 'origen', label: 'Origen', required: true },
-  { name: 'estado_salud', label: 'Estado de Salud', required: true },
-  { name: 'fecha_muerte', label: 'Fecha de Muerte', type: 'date' },
-  { name: 'causa_muerte', label: 'Causa de Muerte' },
+  { name: 'total_aves', label: 'aves totales', type: 'number', required: true },
+  { name: 'id_galpon', label: 'ID del galpon', type: 'number', required: true },
 ];
 
 const AveForm = () => (

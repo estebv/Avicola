@@ -7,6 +7,8 @@ import HuevosForm from './components/HuevosForm';
 import AlimentosForm from './components/AlimentosForm';
 import GalponForm from './components/GalponForm';
 import ClimaForm from './components/ClimaForm';
+import MortalidadForm from './components/Mortalidad';
+
 import './styles/NavStyles.scss'; // Importa los estilos del menú de navegación
 
 const App = () => {
@@ -39,6 +41,9 @@ const App = () => {
             <li>
               <Link to="/clima">Clima </Link>
             </li>
+            <li>
+              <Link to="/mortalidad">Mortalidad </Link>
+            </li>
           </ul>
         </nav>
 
@@ -51,6 +56,8 @@ const App = () => {
           <Route path="/alimentos" element={<AlimentosForm />} />
           <Route path="/galpon" element={<GalponForm />} />
           <Route path="/clima" element={<ClimaForm />} />
+          <Route path="/mortalidad" element={<MortalidadForm />} />
+
         </Routes>
       </div>
     </Router>

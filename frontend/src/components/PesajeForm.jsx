@@ -3,8 +3,9 @@ import React from 'react';
 import GenericForm from './GenericForm';
 
 const pesajeConfig = [
-  { name: 'ave_id', label: 'ID del Ave', type: 'number', required: true },
-  { name: 'estado_salud', label: 'Estado de Salud', required: true },
+  { name: 'id_galpon', label: 'ID del galpon', type: 'number', required: true },
+  { name: 'estado_salud', label: 'Estado de Salud' },
+  { name: 'numero_ave', label: 'numero ave', type: 'number', required: true },
   { name: 'peso', label: 'Peso', type: 'number', required: true },
   { name: 'fecha_Pesaje', label: 'Fecha de Pesaje', type: 'date', required: true },
 ];
