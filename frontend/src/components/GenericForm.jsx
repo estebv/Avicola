@@ -4,12 +4,18 @@ import axios from 'axios';
 import '../styles/formStyles.scss';
 
 const GenericForm = ({ config, endpoint }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
         axios.post(endpoint, data)
-            .then(response => console.log(response.data))
-            .catch(error => console.error(error));
+            .then(response => {
+                console.log('Respuesta del servidor:', response.data);
+                reset(); // Resetea el formulario después de enviar con éxito
+            })
+            .catch(error => {
+                console.error('Error al enviar el formulario:', error);
+                // Aquí podrías mostrar un mensaje de error al usuario
+            });
     };
 
     return (
