@@ -1,3 +1,5 @@
+
+
 from flask import Blueprint
 
 # Importa los blueprints de cada archivo individual de rutas
@@ -12,8 +14,6 @@ from .alimentos_routes import alimentos_blueprint
 from .clima_routes import clima_blueprint
 
 # Define una lista de blueprints para exportar (opcional)
-# Esto permite acceder a los blueprints fuera de este módulo
-# usando `from backend.routes import blueprints_list`
 blueprints_list = [
     galpon_blueprint,
     condiciones_blueprint,
@@ -26,8 +26,16 @@ blueprints_list = [
     clima_blueprint
 ]
 
-# Función para registrar todos los blueprints en la app de Flask
 def register_blueprints(app):
+    """
+    Registra todos los blueprints en la aplicación Flask.
+
+    Args:
+        app (Flask): La aplicación Flask en la cual se registrarán los blueprints.
+
+    Returns:
+        None
+    """
     for blueprint in blueprints_list:
         app.register_blueprint(blueprint)
 

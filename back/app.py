@@ -17,7 +17,7 @@ CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
 # Registrar blueprints
 register_blueprints(app)
 
-# Rutas u otros ajustes de la aplicación
+# rutas
 @app.route('/')
 def index():
     return 'Hola, esta es la API para la base de datos de aves.'

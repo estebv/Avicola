@@ -3,19 +3,7 @@ from models import db, Alimentos
 
 alimentos_blueprint = Blueprint('alimentos_blueprint', __name__)
 
-@alimentos_blueprint.route('/alimentos', methods=['GET'])
-def get_alimentos():
-    alimentos = Alimentos.query.all()
-    return jsonify([alimento.serialize() for alimento in alimentos])
-
-@alimentos_blueprint.route('/alimentos/<int:id>', methods=['GET'])
-def get_alimento(id):
-    alimento = Alimentos.query.get(id)
-    if not alimento:
-        return jsonify({"error": "Registro de alimento no encontrado"}), 404
-    return jsonify(alimento.serialize())
-
-@alimentos_blueprint.route('/alimentos', methods=['POST'])
+@alimentos_blueprint.route('/api/alimentos', methods=['POST'])
 def add_alimento():
     data = request.get_json()
     nuevo_alimento = Alimentos(
@@ -28,6 +16,20 @@ def add_alimento():
     db.session.add(nuevo_alimento)
     db.session.commit()
     return jsonify({"message": "Registro de alimento añadido exitosamente"}), 201
+
+
+@alimentos_blueprint.route('/alimentos', methods=['GET'])
+def get_alimentos():
+    alimentos = Alimentos.query.all()
+    return jsonify([alimento.serialize() for alimento in alimentos])
+
+@alimentos_blueprint.route('/alimentos/<int:id>', methods=['GET'])
+def get_alimento(id):
+    alimento = Alimentos.query.get(id)
+    if not alimento:
+        return jsonify({"error": "Registro de alimento no encontrado"}), 404
+    return jsonify(alimento.serialize())
+
 
 @alimentos_blueprint.route('/alimentos/<int:id>', methods=['PUT'])
 def update_alimento(id):
