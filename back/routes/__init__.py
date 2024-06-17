@@ -1,5 +1,4 @@
 
-
 from flask import Blueprint
 
 # Importa los blueprints de cada archivo individual de rutas
