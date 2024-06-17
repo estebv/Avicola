@@ -11,7 +11,7 @@ const vacunacionConfig = [
 const VacunacionForm = () => (
   <div>
     <h1>Formulario vacunacion</h1>
-    <GenericForm config={vacunacionConfig} endpoint="http://localhost:5000/api/vacunacion" />
+    <GenericForm config={vacunacionConfig} endpoint="http://localhost:5000/api/vacunaciones" />
   </div>
 );
 

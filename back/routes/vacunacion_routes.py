@@ -15,7 +15,7 @@ def get_vacunacion(id):
         return jsonify({"error": "Registro de vacunación no encontrado"}), 404
     return jsonify(vacunacion.serialize())
 
-@vacunacion_blueprint.route('/vacunaciones', methods=['POST'])
+@vacunacion_blueprint.route('/api/vacunaciones', methods=['POST'])
 def add_vacunacion():
     data = request.get_json()
     nueva_vacunacion = Vacunacion(

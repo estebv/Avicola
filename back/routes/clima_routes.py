@@ -3,7 +3,7 @@ from models import db, Clima
 
 clima_blueprint = Blueprint('clima_blueprint', __name__)
 
-@clima_blueprint.route('/clima', methods=['GET'])
+@clima_blueprint.route('/api/clima', methods=['GET'])
 def get_clima():
     clima = Clima.query.all()
     return jsonify([c.serialize() for c in clima])
@@ -15,7 +15,7 @@ def get_clima_by_id(id):
         return jsonify({"error": "Clima no encontrado"}), 404
     return jsonify(clima.serialize())
 
-@clima_blueprint.route('/clima', methods=['POST'])
+@clima_blueprint.route('/api/clima', methods=['POST'])
 def add_clima():
     data = request.get_json()
     nuevo_clima = Clima(

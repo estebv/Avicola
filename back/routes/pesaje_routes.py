@@ -15,7 +15,7 @@ def get_pesaje(id):
         return jsonify({"error": "Registro de pesaje no encontrado"}), 404
     return jsonify(pesaje.serialize())
 
-@pesaje_blueprint.route('/pesajes', methods=['POST'])
+@pesaje_blueprint.route('/api/pesajes', methods=['POST'])
 def add_pesaje():
     data = request.get_json()
     nuevo_pesaje = Pesaje(

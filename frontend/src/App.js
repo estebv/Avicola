@@ -7,7 +7,7 @@ import HuevosForm from './components/HuevosForm';
 import AlimentosForm from './components/AlimentosForm';
 import GalponForm from './components/GalponForm';
 import ClimaForm from './components/ClimaForm';
-import MortalidadForm from './components/Mortalidad';
+import MortalidadForm from './components/MortalidadForm';
 
 import './styles/NavStyles.scss'; // Importa los estilos del menú de navegación
 

@@ -3,19 +3,19 @@ from models import db, Huevos
 
 huevos_blueprint = Blueprint('huevos_blueprint', __name__)
 
-@huevos_blueprint.route('/huevos', methods=['GET'])
+@huevos_blueprint.route('/api/huevos', methods=['GET'])
 def get_huevos():
     huevos = Huevos.query.all()
     return jsonify([huevo.serialize() for huevo in huevos])
 
-@huevos_blueprint.route('/huevos/<int:id>', methods=['GET'])
+@huevos_blueprint.route('/api/huevos/<int:id>', methods=['GET'])
 def get_huevo(id):
     huevo = Huevos.query.get(id)
     if not huevo:
         return jsonify({"error": "Registro de huevo no encontrado"}), 404
     return jsonify(huevo.serialize())
 
-@huevos_blueprint.route('/huevos', methods=['POST'])
+@huevos_blueprint.route('/api/huevos', methods=['POST'])
 def add_huevo():
     data = request.get_json()
     nuevo_huevo = Huevos(

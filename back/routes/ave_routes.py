@@ -4,7 +4,7 @@ from models import db, Ave
 
 aves_blueprint = Blueprint('aves_blueprint', __name__)
 
-@aves_blueprint.route('/aves', methods=['GET'])
+@aves_blueprint.route('/api/aves', methods=['GET'])
 def get_aves():
     aves = Ave.query.all()
     return jsonify([ave.serialize() for ave in aves])
@@ -16,7 +16,7 @@ def get_ave(id):
         return jsonify({"error": "Ave no encontrada"}), 404
     return jsonify(ave.serialize())
 
-@aves_blueprint.route('/aves', methods=['POST'])
+@aves_blueprint.route('/api/aves', methods=['POST'])
 def add_ave():
     data = request.get_json()
     nueva_ave = Ave(

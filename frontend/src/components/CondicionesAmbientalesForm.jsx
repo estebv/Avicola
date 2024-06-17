@@ -15,7 +15,7 @@ const condicionesConfig = [
 const CondicionesAmbientalesForm = () => (
   <div>
     <h1>Formulario Condiciones Ambientales</h1>
-    <GenericForm config={condicionesConfig} endpoint="http://localhost:5000/api/condicionesambientales" />
+    <GenericForm config={condicionesConfig} endpoint="http://localhost:5000/api/condiciones" />
   </div>
 );
 

@@ -3,19 +3,19 @@ from models import db, CondicionesAmbientales
 
 condiciones_blueprint = Blueprint('condiciones_blueprint', __name__)
 
-@condiciones_blueprint.route('/condiciones', methods=['GET'])
+@condiciones_blueprint.route('/api/condiciones', methods=['GET'])
 def get_condiciones():
     condiciones = CondicionesAmbientales.query.all()
     return jsonify([condicion.serialize() for condicion in condiciones])
 
-@condiciones_blueprint.route('/condiciones/<int:id>', methods=['GET']) 
+@condiciones_blueprint.route('/api/condiciones/<int:id>', methods=['GET']) 
 def get_condicion(id):
     condicion = CondicionesAmbientales.query.get(id)
     if not condicion:
         return jsonify({"error": "Condiciones ambientales no encontradas"}), 404
     return jsonify(condicion.serialize())
 
-@condiciones_blueprint.route('/condiciones', methods=['POST'])
+@condiciones_blueprint.route('/api/condiciones', methods=['POST'])
 def add_condicion():
     data = request.get_json()
     nueva_condicion = CondicionesAmbientales(
@@ -30,7 +30,7 @@ def add_condicion():
     db.session.commit()
     return jsonify({"message": "Condiciones ambientales añadidas exitosamente"}), 201
 
-@condiciones_blueprint.route('/condiciones/<int:id>', methods=['PUT'])
+@condiciones_blueprint.route('/api/condiciones/<int:id>', methods=['PUT'])
 def update_condicion(id):
     condicion = CondicionesAmbientales.query.get(id)
     if not condicion:

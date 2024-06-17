@@ -13,7 +13,7 @@ const pesajeConfig = [
 const PesajeForm = () => (
   <div>
     <h1>Formulario pesaje</h1>
-    <GenericForm config={pesajeConfig} endpoint="http://localhost:5000/api/pesaje" />
+    <GenericForm config={pesajeConfig} endpoint="http://localhost:5000/api/pesajes" />
 
   </div>
 );
