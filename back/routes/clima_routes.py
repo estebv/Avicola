@@ -27,7 +27,7 @@ def add_clima():
     db.session.commit()
     return jsonify({"message": "Registro de clima añadido exitosamente"}), 201
 
-@clima_blueprint.route('/clima/<int:id>', methods=['PUT'])
+@clima_blueprint.route('/clima/<int:id>', methods=['PATCH'])
 def update_clima(id):
     clima = Clima.query.get(id)
     if not clima:

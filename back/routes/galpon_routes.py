@@ -26,18 +26,23 @@ def add_galpon():
     db.session.commit()
     return jsonify({"message": "Galpon añadido exitosamente"}), 201
 
-@galpon_blueprint.route('/api/galpon/<int:id_galpon>', methods=['PUT'])
+@galpon_blueprint.route('/api/galpon/<int:id_galpon>', methods=['PATCH'])
 def update_galpon(id_galpon):
     galpon = Galpon.query.get(id_galpon)
     if not galpon:
         return jsonify({"error": "Galpon no encontrado"}), 404
 
     data = request.get_json()
-    galpon.numero_Galpon = data['numero_Galpon']
-    galpon.numero_aves = data['numero_aves']
+    
+    if 'numero_Galpon' in data:
+        galpon.numero_Galpon = data['numero_Galpon']
+    
+    if 'numero_aves' in data:
+        galpon.numero_aves = data['numero_aves']
 
     db.session.commit()
-    return jsonify({"message": "Galpon actualizado exitosamente"})
+    return jsonify({"message": "Galpon actualizado exitosamente"}), 200
+sonify({"message": "Galpon actualizado exitosamente"})
 
 @galpon_blueprint.route('/api/galpon/<int:id_galpon>', methods=['DELETE'])
 def delete_galpon(id_galpon):
