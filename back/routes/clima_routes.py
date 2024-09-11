@@ -1,3 +1,5 @@
+#se puede hacer mix con el file condiciones ambientales
+
 from flask import Blueprint, jsonify, request
 from models import db, Clima
 

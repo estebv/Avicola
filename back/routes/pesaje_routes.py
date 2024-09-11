@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request
 from models import db, Pesaje
 
 pesaje_blueprint = Blueprint('pesaje_blueprint', __name__)
-
+#eliminar  variable  numeroave
 @pesaje_blueprint.route('/pesajes', methods=['GET'])
 def get_pesajes():
     pesajes = Pesaje.query.all()

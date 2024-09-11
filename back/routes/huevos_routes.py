@@ -21,7 +21,6 @@ def add_huevo():
     nuevo_huevo = Huevos(
         fecha_puesta=data['fecha_puesta'],
         peso_huevo=data['peso_huevo'],
-        calidad_huevo=data['calidad_huevo'],
         total_huevo=data['total_huevo'],
         id_galpon=data['id_galpon']
     )

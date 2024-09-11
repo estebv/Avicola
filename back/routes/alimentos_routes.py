@@ -1,3 +1,5 @@
+##cambiar nombre de variables a concentrado
+
 from flask import Blueprint, jsonify, request
 from models import db, Alimentos
 

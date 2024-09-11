@@ -1,3 +1,4 @@
+#delete this file
 from flask import Blueprint, jsonify, request
 from models import db, Galpon
 
@@ -42,7 +43,6 @@ def update_galpon(id_galpon):
 
     db.session.commit()
     return jsonify({"message": "Galpon actualizado exitosamente"}), 200
-sonify({"message": "Galpon actualizado exitosamente"})
 
 @galpon_blueprint.route('/api/galpon/<int:id_galpon>', methods=['DELETE'])
 def delete_galpon(id_galpon):

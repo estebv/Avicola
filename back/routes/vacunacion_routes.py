@@ -1,4 +1,7 @@
+#agregar variable metodo vacunacion
+
 from flask import Blueprint, jsonify, request
+
 from models import db, Vacunacion
 
 vacunacion_blueprint = Blueprint('vacunacion_blueprint', __name__)
