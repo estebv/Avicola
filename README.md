@@ -1,4 +1,4 @@
-# Avicola la reina del huevo
+# Avicola 
 
 # Proyecto de Registro de datos de una Producción Avícola
 
